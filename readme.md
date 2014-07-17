@@ -1,5 +1,7 @@
 # Database Config Loader : Database powered configuration for Laravel
 
+### Note: This is a fork from https://bitbucket.org/hailwoodnz/database-config-loader/overview
+
 `Database Config Loader` is a composer package for the [Laravel PHP Framework](http://laravel.com/) that works in tandem with the default config package to allow developers to easily add user-configurable settings to their app and packages.
 
 ### Key Features
@@ -16,7 +18,7 @@
 
 1. Add the package to composer.json
 
-        "hailwood/database-config-loader": "*",
+        "daursu/database-config-loader": "*",
 
 2. Add the service provider to your application's `app.php` under the `providers` key
 
@@ -126,12 +128,12 @@ Notice the array above, let's create the initial key shall we?
 
 We need to do that because we cannot set a value on something that doesn't exist, so we need to create the path right? **wrong!** this is a Laravel package, and that is anything but elegant!
 
-So, `Database Config Loader` does a bit of magic for you, Just call `DBconfig::set('config.key.subKey1.subKey2.subKey3', 'value')` and we'll do the rest! 
+So, `Database Config Loader` does a bit of magic for you, Just call `DBconfig::set('config.key.subKey1.subKey2.subKey3', 'value')` and we'll do the rest!
 
 ### ::set()
 The get method is used to retrieve configuration options and follows the same standard as the Laravel Config package, which means it supports namespacing, groups (aka files), and nested keys.
 
-The get method is the same as the `set` method, except in only takes on parameter, the key, so we won't detail it all here again, instead just view `set` above! 
+The get method is the same as the `set` method, except in only takes on parameter, the key, so we won't detail it all here again, instead just view `set` above!
 
 ::has(), ::hasGroup(),...
 `Database config loader` supports all method used by the standard Laravel Config package, so view the official Laravel documentation for other methods!
