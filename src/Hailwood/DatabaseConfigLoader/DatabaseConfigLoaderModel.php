@@ -18,7 +18,7 @@ class DatabaseConfigLoaderModel extends Eloquent\Model{
         $model = self::WhereIn('id', function ($q) use ($environment){
             $q->select(DB::raw('COALESCE(MIN(CASE WHEN environment = "' . $environment . '" THEN id END), MIN(id))'))
                 ->from(( new self )->getTable())
-                ->groupBy('package', 'key');
+                ->groupBy('package', 'group', 'key');
         });
 
         is_null($package) ? $model->whereNull('package') : $model->where('package', $package);
