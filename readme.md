@@ -18,7 +18,7 @@
 
 1. Add the package to composer.json
 
-        "daursu/database-config-loader": "*",
+        "hailwood/database-config-loader": "dev-master",
 
 2. Add the service provider to your application's `app.php` under the `providers` key
 
